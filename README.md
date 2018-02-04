@@ -1,8 +1,19 @@
-# vueapp
+# 功能实现
 
-> vue test project
+## web 端
 
-## Build Setup
+* 文件上传，图片预览，并实时显示上传进度  
+    路由: /upload
+
+## 移动端
+
+* tab 页切换，使用 swiper 实现左右滑动效果
+
+* 使用 swiper 实现仿 IOS 详情页右滑返回列表页
+
+* 使用 better-scroll 实现上下滑动效果，并实现无限加载
+
+# Build Setup
 
 ``` bash
 # install dependencies

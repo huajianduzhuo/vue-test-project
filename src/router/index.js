@@ -8,7 +8,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/index',
+      path: '/tabAnimate',
       name: 'TabAnimate',
       component: TabAnimate,
       children: [
