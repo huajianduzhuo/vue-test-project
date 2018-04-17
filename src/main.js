@@ -26,9 +26,16 @@ Vue.use(Scrollbar)
 Vue.use(TabContainer)
 
 /* eslint-disable no-new */
-new Vue({
+let vm = new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: { App }
 })
+
+window.ononline = (w, event) => {
+  vm.$message({message: '网络连上了', duration: 1500})
+}
+window.onoffline = (w, event) => {
+  vm.$message({message: '网络断开了', duration: 1500})
+}
