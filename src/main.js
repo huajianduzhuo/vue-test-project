@@ -8,6 +8,7 @@ import VueUpload from 'vue-upload-component'
 import ElementUI from 'element-ui'
 import Datatable from 'vue2-datatable-component'
 import Scrollbar from './plugins/scrollbar'
+import debounce from 'lodash.debounce'
 
 import TabContainer from './tabContainer'
 // import Scroller from './components/Scroller'
@@ -24,6 +25,8 @@ Vue.use(ElementUI)
 Vue.use(Datatable)
 Vue.use(Scrollbar)
 Vue.use(TabContainer)
+
+Vue.prototype._debounce = debounce
 
 /* eslint-disable no-new */
 let vm = new Vue({
