@@ -37,8 +37,8 @@ html, body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('./assets/deng.jpg') no-repeat;
-  background-size: cover;
+  background: url('./assets/deng.jpg') repeat-x;
+  background-size: contain;
   z-index: -1;
   filter: blur(3px);
 }
