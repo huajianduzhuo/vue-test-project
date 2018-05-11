@@ -70,6 +70,11 @@ export default new Router({
       path: '/testTabContainer',
       name: 'testTabContainer',
       component: () => import('../pages/testTabContainer')
+    },
+    {
+      path: '/drag',
+      name: 'testDrag',
+      component: () => import('../pages/testDrag')
     }
   ]
 })
