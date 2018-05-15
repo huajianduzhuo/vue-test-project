@@ -75,6 +75,11 @@ export default new Router({
       path: '/drag',
       name: 'testDrag',
       component: () => import('../pages/testDrag')
+    },
+    {
+      path: '/getJuejin',
+      name: 'getJueJinData',
+      component: () => import('../pages/getJueJinData.vue')
     }
   ]
 })

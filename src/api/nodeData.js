@@ -17,3 +17,7 @@ export const addData = (name) => {
 export const addDatas = (names) => {
   return http.post(`${baseUrl}addDatas`, {names})
 }
+
+export const getJueJinData = () => {
+  return http.get(`${baseUrl}getJueJinData`)
+}
