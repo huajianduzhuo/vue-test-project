@@ -80,6 +80,11 @@ export default new Router({
       path: '/getJuejin',
       name: 'getJueJinData',
       component: () => import('../pages/getJueJinData.vue')
+    },
+    {
+      path: '/testVScroll',
+      name: 'testVScroll',
+      component: () => import('../pages/testVScroll.vue')
     }
   ]
 })

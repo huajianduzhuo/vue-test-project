@@ -62,7 +62,7 @@ export default {
 
 <style scoped>
 .top {
-  position: relative;
+  position: fixed;
   width: 100%;
   height: 0.44rem;
   z-index: 100;
