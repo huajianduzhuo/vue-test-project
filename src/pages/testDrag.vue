@@ -9,6 +9,8 @@
       <div class="dragarea-bg" draggable="false">拖到图片至此区域</div>
       <div class="file-pre-item" v-for="(file, index) in files" :style="file.url ? `background-image: url(${file.url})` : ''" :key="index">
         <i class="del-file el-icon-circle-cross" @click="removeFile(index)"></i>
+        <span class="file-info">{{file.name}}</span>
+        <span class="file-info">{{file.size | formatSize}}</span>
       </div>
     </div>
   </div>
@@ -19,12 +21,16 @@ export default {
   data () {
     return {
       isDragOver: false,
-      files: []
+      files: [],
+      fileType: 'image/jpeg',
+      qlty: 0.5,
+      canvas: null,
+      ctx: null,
+      imgWH: 1000
     }
   },
   methods: {
     handleDrop (ev) {
-      console.log(ev.dataTransfer.files)
       this.isDragOver = false
       let files = Array.from(ev.dataTransfer.files)
       const l = this.files.length
@@ -46,6 +52,24 @@ export default {
     removeFile (index) {
       this.files.splice(index, 1)
     }
+  },
+  filters: {
+    formatSize (size) {
+      if (size < 1024) {
+        size = size + 'bytes'
+      } else if (size < 1048576) {
+        size = (size / 1024).toFixed(2) + 'KB'
+      } else if (size < 1073741824) {
+        size = (size / 1048576).toFixed(2) + 'MB'
+      } else if (size < 1073741824 * 1024) {
+        size = (size / 1073741824).toFixed(2) + 'GB'
+      }
+      return size
+    }
+  },
+  mounted () {
+    this.canvas = document.createElement('canvas')
+    this.ctx = this.canvas.getContext('2d')
   }
 }
 </script>
@@ -86,6 +110,15 @@ export default {
   background-position: center;
   background-size: cover;
   background-color: #666666;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+.file-info {
+  display: block;
+  font-size: 12px;
+  color: #ececec;
 }
 .del-file {
   position: absolute;
