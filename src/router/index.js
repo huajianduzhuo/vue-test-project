@@ -85,6 +85,11 @@ export default new Router({
       path: '/testVScroll',
       name: 'testVScroll',
       component: () => import('../pages/testVScroll.vue')
+    },
+    {
+      path: '/longtap',
+      name: 'testLongTap',
+      component: () => import('../pages/testLongTap.vue')
     }
   ]
 })
