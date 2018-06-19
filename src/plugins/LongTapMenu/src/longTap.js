@@ -1,4 +1,3 @@
-let longTapFlag = false // 是否触发了长按
 let r = null // setTimeout 标志
 let startX = 0, // touchstart 时手指的位置，用于 touchmove 时判断手指是否移动
     startY = 0
@@ -22,16 +21,12 @@ export default {
      *    可以指定 modifier：menu
      */
     el.addEventListener('touchstart', event => {
-      if (longTapFlag) {
-        return
-      }
       let touch = event.changedTouches[0]
       startX = touch.clientX
       startY = touch.clientY
       // settimeout 函数
       r = setTimeout(() => {
         r = null
-        longTapFlag = true
         /** 
          * 如果绑定的值是函数，则执行
          * v-longtap = "cb"
@@ -80,7 +75,3 @@ export default {
     }, false)
   }
 }
-
-document.addEventListener('click', event => {
-  longTapFlag = false
-}, false)
