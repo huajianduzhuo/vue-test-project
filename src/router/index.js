@@ -67,11 +67,6 @@ export default new Router({
       component: SVG
     },
     {
-      path: '/testTabContainer',
-      name: 'testTabContainer',
-      component: () => import('../pages/testTabContainer')
-    },
-    {
       path: '/drag',
       name: 'testDrag',
       component: () => import('../pages/testDrag')

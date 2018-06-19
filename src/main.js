@@ -10,7 +10,6 @@ import Datatable from 'vue2-datatable-component'
 import Scrollbar from './plugins/scrollbar'
 import debounce from 'lodash.debounce'
 
-import TabContainer from './tabContainer'
 import LongTap from './plugins/LongTap'
 // import Scroller from './components/Scroller'
 import './config/rem'
@@ -25,7 +24,6 @@ Vue.component('file-upload', VueUpload)
 Vue.use(ElementUI)
 Vue.use(Datatable)
 Vue.use(Scrollbar)
-Vue.use(TabContainer)
 Vue.use(LongTap)
 
 Vue.prototype._debounce = debounce
