@@ -9,6 +9,8 @@
 
 ## 使用插件
 
+`import LongTap from './plugins/LongTap'`
+
 `Vue.use(LongTap)`
 
 ## 注册长按事件
@@ -34,6 +36,7 @@
 
 | 参数  | 类型    | 说明                   |
 | :---: | :-----: | :--------------------: |
+| event | Event   |                        |
 | el    | DOM元素 | 触发长按事件的元素     |
 | vNode | vNode   | 触发长按事件的虚拟节点 |
 
