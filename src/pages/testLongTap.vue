@@ -10,12 +10,12 @@
 export default {
   data () {
     return {
-      list: ['岑岑', '灿灿', '卫庄', '盖聂']
+      list: ['岑岑', '灿灿', '卫庄', '盖聂', '岑岑', '灿灿', '卫庄', '盖聂', '岑岑', '灿灿', '卫庄', '盖聂', '岑岑', '灿灿', '卫庄', '盖聂', '岑岑', '灿灿', '卫庄', '盖聂']
     }
   },
   methods: {
-    longtapCB (el, vNode) {
-      console.log(el)
+    longtapCB (event, el, vNode) {
+      console.log(event)
       console.log('--------')
     },
     handleClick () {
@@ -28,6 +28,8 @@ export default {
 
 <style scoped lang="scss">
 .wrap {
+  height: 100%;
+  overflow: auto;
   background: #ffffff;
 }
 .item {
