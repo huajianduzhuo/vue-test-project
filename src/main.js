@@ -11,6 +11,7 @@ import Scrollbar from './plugins/scrollbar'
 import debounce from 'lodash.debounce'
 
 import LongTap from './plugins/LongTap'
+import Menu from './plugins/Menu'
 // import Scroller from './components/Scroller'
 import './config/rem'
 import 'swiper/dist/css/swiper.css'
@@ -25,6 +26,7 @@ Vue.use(ElementUI)
 Vue.use(Datatable)
 Vue.use(Scrollbar)
 Vue.use(LongTap)
+Vue.use(Menu)
 
 Vue.prototype._debounce = debounce
 

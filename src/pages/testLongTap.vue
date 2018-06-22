@@ -17,6 +17,7 @@ export default {
     longtapCB (event, el, vNode) {
       console.log(event)
       console.log('--------')
+      this.$menu(event, vNode)
     },
     handleClick () {
       console.log('click')
