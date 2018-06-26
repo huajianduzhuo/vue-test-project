@@ -1,0 +1,24 @@
+.menu-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1500;
+}
+.menu {
+  position: fixed;
+  background: #666;
+  min-width: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #484848;
+  z-index: 2000;
+  padding: 0.05rem 0;
+  text-align: center;
+  transition: transformX(-50%);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+}
+.menu-top {
+}
+.menu-bottom {
+}
