@@ -2,7 +2,10 @@ export default {
   name: 'Menu',
   props: {
     event: Event,
-    vNode: Object
+    vNode: Object,
+    isOnTop: Boolean,
+    menuLeft: Number,
+    menuTop: Number
   },
   methods: {
     closeMenu () {
@@ -14,27 +17,20 @@ export default {
     document.body.style.overflow = 'hidden'
   },
   render (h) {
-    const docH = document.documentElement.clientHeight
-    const elm = this.vNode.elm
-    const elmW = elm.offsetWidth
-    const elmH = elm.offsetHeight
-    const top = elm.getBoundingClientRect().top
-    const left = elm.getBoundingClientRect().left
-    const menuLeft = left + elmW / 2
-    let direc = ''
-    if (top >= docH / 5) {
-      direc = 'top'
-    } else {
-      direc = 'bottom'
-    }
-    const maskLayer = (<div class="menu-mask"></div>)
-    let menu = direc === 'top'
+    console.log(this)
+    const {isOnTop, menuLeft, menuTop} = this
+    let menu = isOnTop
       ? (
-        <div style={{left: menuLeft + 'px'}} class="menu menu-top"></div>
+        <div style="{{left: menuLeft + 'px', top: menuTop + 'px'}}" class="menu menu-top">复制</div>
       )
       : (
-        <div style={{left: menuLeft + 'px'}} class="menu menu-bottom"></div>
+        <div style="{{left: menuLeft + 'px', top: menuTop + 'px'}}" class="menu menu-bottom">复制</div>
       )
-    return menu
+    return (
+      <div class="menu-wrap">
+        <div class="menu-mask"></div>
+        {menu}
+      </div>
+    )
   }
 }

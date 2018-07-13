@@ -15,10 +15,11 @@
   z-index: 2000;
   padding: 0.05rem 0;
   text-align: center;
-  transition: transformX(-50%);
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
 }
 .menu-top {
+  transition: transform3d(-50%, -100%, 0);
 }
 .menu-bottom {
+  transition: transformX(-50%);
 }
