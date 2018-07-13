@@ -118,13 +118,33 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
 
-    // service worker
+    /** 
+     * service worker
+     * 静态缓存 html, css, app.*.js, manifest.*.js, vendor.*.js
+     * 动态缓存图片、字体文件、代码分割的 js 文件
+     *   -- 缺点：没加载过的路由，断网后无法访问
+     */
     new SWPrecacheWebpackPlugin({
       cacheId: 'my-vue-app',
       filename: 'service-worker.js',
-      staticFileGlobs: ['dist/**/*.{js,html,css}'],
+      staticFileGlobs: [
+        'dist/**/*.{html,css}',
+        'dist/static/js/app.*.js',
+        'dist/static/js/manifest.*.js',
+        'dist/static/js/vendor.*.js'
+      ],
       minify: true,
-      stripPrefix: 'dist/'
+      stripPrefix: 'dist/',
+      runtimeCaching: [{
+        urlPattern: /\/static\/fonts\//,
+        handler: 'cacheFirst'
+      }, {
+        urlPattern: /\/static\/img\//,
+        handler: 'cacheFirst'
+      }, {
+        urlPattern: /\/static\/js\/\d+\.\w+\.js/,
+        handler: 'cacheFirst'
+      }]
     })
   ]
 })
