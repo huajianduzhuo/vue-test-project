@@ -5,10 +5,30 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>vueapp</title>
+  <style>
+    .pre-render-area {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      font-weight: bold;
+      color: brown;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <div class="pre-render-area">
+      正在加载，请稍后...
+    </div>
+  </div>
   <!-- built files will be auto injected -->
 </body>
 
