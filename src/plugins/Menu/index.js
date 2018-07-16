@@ -1,5 +1,5 @@
-import Main from './main.js'
-import './default-menu.css'
+import Main from './src/main.js'
+import './src/default-menu.css'
 
 Main.install = function (Vue, option) {
   Vue.prototype.$menu = Main

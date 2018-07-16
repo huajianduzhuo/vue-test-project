@@ -8,25 +8,39 @@ export default {
       vNode: null,
       isOnTop: true,
       menuLeft: 0,
-      menuTop: 0,
-      onunload: null
+      menuTop: 0
     }
   },
   methods: {
     closeMenu () {
       document.body.style.overflow = ''
       document.body.removeChild(this.$el)
-      if (typeof this.onunload === 'function') {
-        this.onunload()
-      }
+      this.addActiveClass(false)
       this.$destroy()
     },
     copyEl () {
       copy(this.vNode.elm.textContent)
       this.closeMenu()
+    },
+    addActiveClass(opt) {
+      const el = this.vNode.elm
+      let cns = el.className.split(' ')
+      let index = cns.indexOf('menu-active')
+      if (opt) {
+        if (index === -1) {
+          cns.push('menu-active')
+          el.className = cns.join(' ')
+        }
+      } else {
+        if (index > -1) {
+          cns.splice(index, 1)
+          el.className = cns.join(' ')
+        }
+      }
     }
   },
   mounted () {
+    this.addActiveClass(true)
     document.body.style.overflow = 'hidden'
   },
   render (h) {

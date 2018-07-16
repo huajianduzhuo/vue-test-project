@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div>
-      <div class="item" :class="{'active': activeIndex === index}" v-for="(item, index) in list" @click="handleClick" v-longtap="{handler: longtapCB, time: 1000, disX: 10}" :key="index">{{item}}</div>
+      <div class="item" v-for="(item, index) in list" @click="handleClick" v-longtap="{handler: longtapCB, time: 1000, disX: 10}" :key="index">{{item}}</div>
     </div>
   </div>
 </template>
@@ -10,7 +10,6 @@
 export default {
   data () {
     return {
-      activeIndex: '',
       list: ['aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd']
     }
   },
@@ -18,15 +17,12 @@ export default {
     longtapCB (event, el, vNode) {
       console.log(vNode)
       console.log('--------')
-      this.activeIndex = vNode.key
-      this.$menu(event, vNode, {onunload: this.onmenuunload})
+      this.$menu(event, vNode, {})
     },
-    onmenuunload () {
-      this.activeIndex = ''
-    },
-    handleClick () {
+    handleClick (event) {
       console.log('click')
       console.log('--------')
+      console.log(event)
     }
   }
 }
@@ -47,8 +43,5 @@ export default {
   user-select: none;
   color: #000000;
   @include border-1px
-}
-.item.active {
-  background-color: rgba(194, 196, 196, 0.411);
 }
 </style>

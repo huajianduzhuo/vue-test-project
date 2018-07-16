@@ -68,7 +68,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.14px;
 }
-.longtap-active {
+.longtap-active, .menu-active {
   background-color: rgba(194, 196, 196, 0.411) !important;
 }
 </style>

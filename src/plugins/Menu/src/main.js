@@ -12,6 +12,7 @@ const Main = function (event, vNode, data) {
     const isOnTop = elRect.top >= docH / 5
     const menuLeft = elRect.left + el.offsetWidth / 2
     const menuTop = isOnTop ? elRect.top - 6 : elRect.top + el.offsetHeight + 6
+    data = typeof data === 'object' ? data : {}
     const vm = new MenuContructor({data: {event, vNode, isOnTop, menuLeft, menuTop, ...data}}).$mount()
     document.body.appendChild(vm.$el)
   }
