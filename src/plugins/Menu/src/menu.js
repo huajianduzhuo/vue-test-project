@@ -5,7 +5,7 @@ export default {
   data () {
     return {
       event: null,
-      vNode: null,
+      el: null,
       isOnTop: true,
       menuLeft: 0,
       menuTop: 0
@@ -19,11 +19,11 @@ export default {
       this.$destroy()
     },
     copyEl () {
-      copy(this.vNode.elm.textContent)
+      copy(this.el.textContent)
       this.closeMenu()
     },
     addActiveClass(opt) {
-      const el = this.vNode.elm
+      const el = this.el
       let cns = el.className.split(' ')
       let index = cns.indexOf('menu-active')
       if (opt) {

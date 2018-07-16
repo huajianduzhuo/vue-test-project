@@ -17,12 +17,12 @@ export default {
     longtapCB (event, el, vNode) {
       console.log(vNode)
       console.log('--------')
-      this.$menu(event, vNode, {})
+      this.$menu(event, el, {})
     },
     handleClick (event) {
       console.log('click')
       console.log('--------')
-      console.log(event)
+      this.$menu(event, event.target, {})
     }
   }
 }
