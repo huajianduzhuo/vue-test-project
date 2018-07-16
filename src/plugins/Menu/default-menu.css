@@ -9,17 +9,52 @@
 .menu {
   position: fixed;
   background: #666;
-  min-width: 0.5rem;
   border-radius: 5px;
   border: 1px solid #484848;
   z-index: 2000;
   padding: 0.05rem 0;
   text-align: center;
+  font-size: 16px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  color: #ececec;
 }
 .menu-top {
-  transition: transform3d(-50%, -100%, 0);
+  transform: translate3d(-50%, -100%, 0);
 }
 .menu-bottom {
-  transition: transformX(-50%);
+  transform: translate3d(-50%, 0, 0);
+}
+.menu-item {
+  padding: 1px 5px;
+}
+.menu-top::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 103%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #666666;
+  border-bottom-width: 0;
+  transform: translateX(-50%);
+}
+.menu-bottom::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #666666;
+  border-top-width: 0;
+  transform: translateX(-50%);
 }

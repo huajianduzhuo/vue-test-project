@@ -1,35 +1,42 @@
+import copy from 'copy-to-clipboard'
+
 export default {
   name: 'Menu',
-  props: {
-    event: Event,
-    vNode: Object,
-    isOnTop: Boolean,
-    menuLeft: Number,
-    menuTop: Number
+  data () {
+    return {
+      event: null,
+      vNode: null,
+      isOnTop: true,
+      menuLeft: 0,
+      menuTop: 0,
+      onunload: null
+    }
   },
   methods: {
     closeMenu () {
       document.body.style.overflow = ''
+      document.body.removeChild(this.$el)
+      if (typeof this.onunload === 'function') {
+        this.onunload()
+      }
       this.$destroy()
+    },
+    copyEl () {
+      copy(this.vNode.elm.textContent)
+      this.closeMenu()
     }
   },
   mounted () {
     document.body.style.overflow = 'hidden'
   },
   render (h) {
-    console.log(this)
     const {isOnTop, menuLeft, menuTop} = this
-    let menu = isOnTop
-      ? (
-        <div style="{{left: menuLeft + 'px', top: menuTop + 'px'}}" class="menu menu-top">复制</div>
-      )
-      : (
-        <div style="{{left: menuLeft + 'px', top: menuTop + 'px'}}" class="menu menu-bottom">复制</div>
-      )
     return (
       <div class="menu-wrap">
-        <div class="menu-mask"></div>
-        {menu}
+        <div class="menu-mask" onClick={this.closeMenu}></div>
+        <div style={`left: ${menuLeft}px;top: ${menuTop}px`} class={{menu: true, 'menu-top': isOnTop, 'menu-bottom': !isOnTop}}>
+          <div class="menu-item" onClick={this.copyEl}>复制</div>
+        </div>
       </div>
     )
   }
