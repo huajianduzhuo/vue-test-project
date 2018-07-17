@@ -8,7 +8,13 @@ export default {
       el: null,
       isOnTop: true,
       menuLeft: 0,
-      menuTop: 0
+      menuTop: 0,
+      menuDirection: 'horizontal', // or vertical
+      data: null,
+      items: {
+        copy: true
+      },
+      customItems: [] // [{menuName: '', handler: null}]
     }
   },
   methods: {
@@ -20,6 +26,12 @@ export default {
     },
     copyEl () {
       copy(this.el.textContent)
+      this.closeMenu()
+    },
+    packCustomHandler (handler) {
+      if (typeof handler === 'function') {
+        handler(this.data)
+      }
       this.closeMenu()
     },
     addActiveClass(opt) {
@@ -44,12 +56,29 @@ export default {
     document.body.style.overflow = 'hidden'
   },
   render (h) {
-    const {isOnTop, menuLeft, menuTop} = this
+    const {isOnTop, menuLeft, menuTop, items, customItems, menuDirection} = this
+    const menuItemClass = menuDirection === 'horizontal' ? 'menu-horizontal' : 'menu-vertical'
+    let defaultMenuItems = []
+    for (const item in items) {
+      if (items.hasOwnProperty(item) && items[item]) {
+        switch (item) {
+          case 'copy':
+            defaultMenuItems.push(<span class="menu-item" onClick={this.copyEl}>复制</span>)
+            break
+        }
+      }
+    }
+    let customMenuItems = customItems.map(item => (
+      <span class="menu-item" onClick={this.packCustomHandler.bind(this, item.handler)}>{item.menuName}</span>
+    ))
     return (
       <div class="menu-wrap">
         <div class="menu-mask" onClick={this.closeMenu}></div>
-        <div style={`left: ${menuLeft}px;top: ${menuTop}px`} class={{menu: true, 'menu-top': isOnTop, 'menu-bottom': !isOnTop}}>
-          <div class="menu-item" onClick={this.copyEl}>复制</div>
+        <div
+          style={`left: ${menuLeft}px;top: ${menuTop}px`}
+          class={{menu: true, 'menu-top': isOnTop, 'menu-bottom': !isOnTop, [menuItemClass]: true}}>
+          {defaultMenuItems}
+          {customMenuItems}
         </div>
       </div>
     )

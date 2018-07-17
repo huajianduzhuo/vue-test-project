@@ -17,7 +17,18 @@ export default {
     longtapCB (event, el, vNode) {
       console.log(vNode)
       console.log('--------')
-      this.$menu(event, el, {})
+      this.$menu(event, el, {
+        menuDirection: 'horizontal',
+        data: {index: vNode.key, name: el.textContent},
+        items: {copy: true},
+        customItems: [{
+          menuName: '详情',
+          handler: this.showInfo
+        }]
+      })
+    },
+    showInfo (data) {
+      this.$message({message: data.index + ', ' + data.name, duration: 1000})
     },
     handleClick (event) {
       console.log('click')
