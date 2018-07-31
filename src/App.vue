@@ -3,7 +3,7 @@
     <keep-alive>
       <router-view/>
     </keep-alive>
-    <div class="bg"></div>
+    <!-- <div class="bg"></div> -->
   </div>
 </template>
 

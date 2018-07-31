@@ -13,7 +13,7 @@ import debounce from 'lodash.debounce'
 import LongTap from './plugins/LongTap'
 import Menu from './plugins/Menu'
 // import Scroller from './components/Scroller'
-import './registerServiceWorker.js'
+// import './registerServiceWorker.js'
 import './config/rem'
 import 'swiper/dist/css/swiper.css'
 import './common/style.css'
@@ -36,7 +36,10 @@ let vm = new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App },
+  mounted () {
+    document.dispatchEvent(new Event('render-event'))
+  }
 })
 
 window.ononline = (w, event) => {

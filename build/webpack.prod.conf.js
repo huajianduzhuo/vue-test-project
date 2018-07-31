@@ -11,6 +11,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSpaPlugin.PuppeteerRenderer
 
 const env = require('../config/prod.env')
 
@@ -145,6 +147,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         urlPattern: /\/static\/js\/\d+\.\w+\.js/,
         handler: 'cacheFirst'
       }]
+    }),
+    // prerender
+    new PrerenderSpaPlugin({
+      staticDir: path.join(__dirname, '../dist'),
+      routes: ['/', '/longtap', '/drag'],
+      renderer: new Renderer({
+        renderAfterDocumentEvent: 'render-event'
+      })
     })
   ]
 })
