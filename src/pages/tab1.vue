@@ -14,6 +14,9 @@ export default {
     return {
       list: ['cencen', 'cancan', 'qiye', 'weizhuang', 'genie', 'hanfei']
     }
+  },
+  mounted () {
+    this.$store.dispatch('setName', '北宇')
   }
 }
 </script>

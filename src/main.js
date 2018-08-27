@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import VueUpload from 'vue-upload-component'
 import ElementUI from 'element-ui'
@@ -35,6 +36,7 @@ Vue.prototype._debounce = debounce
 let vm = new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App },
   mounted () {
