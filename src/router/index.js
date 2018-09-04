@@ -86,6 +86,11 @@ export default new Router({
       path: '/longtap',
       name: 'testLongTap',
       component: () => import('../pages/testLongTap.vue')
+    },
+    {
+      path: '/dragableTable',
+      name: 'dragableTable',
+      component: () => import('../pages/dragableTable.vue')
     }
   ]
 })
