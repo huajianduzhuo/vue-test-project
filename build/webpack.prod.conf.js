@@ -153,7 +153,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       staticDir: path.join(__dirname, '../dist'),
       routes: ['/', '/longtap', '/drag'],
       renderer: new Renderer({
-        renderAfterDocumentEvent: 'render-event'
+        renderAfterDocumentEvent: 'render-event',
+        inject: {
+          rem: true
+        }
       })
     })
   ]

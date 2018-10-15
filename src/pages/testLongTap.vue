@@ -10,7 +10,7 @@
 export default {
   data () {
     return {
-      list: ['aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd']
+      list: []
     }
   },
   methods: {
@@ -35,6 +35,11 @@ export default {
       console.log('--------')
       this.$menu(event, event.target, {})
     }
+  },
+  mounted () {
+    setTimeout(() => {
+      this.list = ['aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd', 'aa', 'bb', 'cc', 'dd']
+    }, 1000)
   }
 }
 </script>
