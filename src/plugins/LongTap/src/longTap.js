@@ -6,7 +6,7 @@ let firstTouch = false
 
 export default {
   inserted (el, binding, vNode) {
-    let delayTime = 1200
+    let delayTime = 350
     let disX = 10,
         disY = 10
     let value = binding.value
@@ -98,7 +98,14 @@ export default {
         clearTimeout(r)
         r = null
       }
+      // event.preventDefault()
     }, false)
+    /** 
+     * 禁止手机浏览器菜单
+     */
+    el.addEventListener('contextmenu', event => {
+      event.preventDefault()
+    })
   }
 }
 
