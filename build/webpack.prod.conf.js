@@ -30,6 +30,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
+  watch: true,
+  watchOptions: {
+    ignored: ['node_modules', 'dist', 'cypress', 'test']
+  },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({

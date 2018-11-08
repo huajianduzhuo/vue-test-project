@@ -2634,6 +2634,12 @@ eslint-module-utils@^2.2.0:
     debug "^2.6.8"
     pkg-dir "^1.0.0"
 
+eslint-plugin-cypress@^2.1.1:
+  version "2.1.1"
+  resolved "http://registry.npm.taobao.org/eslint-plugin-cypress/download/eslint-plugin-cypress-2.1.1.tgz#67745025a2026a57c27fc9af9831e094240d34a4"
+  dependencies:
+    globals "^11.0.1"
+
 eslint-plugin-html@^3.0.0:
   version "3.2.2"
   resolved "http://registry.npm.taobao.org/eslint-plugin-html/download/eslint-plugin-html-3.2.2.tgz#ef7093621d3a93de3206fd1f92f347ea9a1a4dfa"
@@ -3323,6 +3329,10 @@ global-dirs@^0.1.0:
   dependencies:
     ini "^1.3.4"
 
+globals@^11.0.1:
+  version "11.8.0"
+  resolved "http://registry.npm.taobao.org/globals/download/globals-11.8.0.tgz#c1ef45ee9bed6badf0663c5cb90e8d1adec1321d"
+
 globals@^9.14.0, globals@^9.18.0:
   version "9.18.0"
   resolved "http://registry.npm.taobao.org/globals/download/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
@@ -3605,7 +3615,7 @@ http-errors@1.6.3, http-errors@~1.6.2, http-errors@~1.6.3:
     setprototypeof "1.1.0"
     statuses ">= 1.4.0 < 2"
 
-http-errors@^1.6.3, http-errors@~1.7.1:
+http-errors@^1.3.1, http-errors@^1.6.3, http-errors@~1.7.1:
   version "1.7.1"
   resolved "http://registry.npm.taobao.org/http-errors/download/http-errors-1.7.1.tgz#6a4ffe5d35188e1c39f872534690585852e1f027"
   dependencies:
@@ -4273,6 +4283,17 @@ koa-is-json@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/koa-is-json/download/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
 
+koa-router@^7.4.0:
+  version "7.4.0"
+  resolved "http://registry.npm.taobao.org/koa-router/download/koa-router-7.4.0.tgz#aee1f7adc02d5cb31d7d67465c9eacc825e8c5e0"
+  dependencies:
+    debug "^3.1.0"
+    http-errors "^1.3.1"
+    koa-compose "^3.0.0"
+    methods "^1.0.1"
+    path-to-regexp "^1.1.1"
+    urijs "^1.19.0"
+
 koa-send@^5.0.0:
   version "5.0.0"
   resolved "http://registry.npm.taobao.org/koa-send/download/koa-send-5.0.0.tgz#5e8441e07ef55737734d7ced25b842e50646e7eb"
@@ -4657,7 +4678,7 @@ merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/merge-descriptors/download/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
 
-methods@~1.1.2:
+methods@^1.0.1, methods@~1.1.2:
   version "1.1.2"
   resolved "http://registry.npm.taobao.org/methods/download/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
@@ -5387,7 +5408,7 @@ path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "http://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
 
-path-to-regexp@^1.0.1:
+path-to-regexp@^1.0.1, path-to-regexp@^1.1.1:
   version "1.7.0"
   resolved "http://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-1.7.0.tgz#59fde0f435badacba103a84e9d3bc64e96b9937d"
   dependencies:
@@ -7369,7 +7390,7 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-urijs@^1.16.1:
+urijs@^1.16.1, urijs@^1.19.0:
   version "1.19.1"
   resolved "http://registry.npm.taobao.org/urijs/download/urijs-1.19.1.tgz#5b0ff530c0cbde8386f6342235ba5ca6e995d25a"
 
