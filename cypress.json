@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://localhost:3004",
+  "baseUrl": "https://posuat1.mercedes-benz-finance.com.cn/cicd-mobile/e-app/#",
   "fixturesFolder": "test/e2e/fixtures",
   "integrationFolder": "test/e2e/specs",
   "pluginsFile": "test/e2e/plugins/index.js",
@@ -7,5 +7,7 @@
   "supportFile": "test/e2e/support/index.js",
   "videosFolder": "test/e2e/videos",
   "viewportWidth": 375,
-  "viewportHeight": 667
+  "viewportHeight": 667,
+  "pageLoadTimeout": 120000,
+  "requestTimeout": 60000
 }

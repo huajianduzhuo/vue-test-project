@@ -18,7 +18,7 @@
     "axios": "^0.18.0",
     "better-scroll": "^1.8.0",
     "copy-to-clipboard": "^3.0.8",
-    "element-ui": "^1.4.13",
+    "element-ui": "^2.4.9",
     "koa": "^2.5.1",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",

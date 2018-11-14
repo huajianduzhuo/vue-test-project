@@ -31,3 +31,11 @@ node app.js
 ```
 
 打开 http://localhost:3002/#/，在 application -> service wokers 中可看到本页面的 service worker。
+
+# 测试
+
+## e2e 测试
+
+使用 `cypress` 进行 e2e 测试
+
+启动测试 `npm run e2e:open` 或 `npm run e2e:run`
