@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://posuat1.mercedes-benz-finance.com.cn/cicd-mobile/e-app/#",
+  "baseUrl": "https://posuat1.mercedes-benz-finance.com.cn",
   "fixturesFolder": "test/e2e/fixtures",
   "integrationFolder": "test/e2e/specs",
   "pluginsFile": "test/e2e/plugins/index.js",

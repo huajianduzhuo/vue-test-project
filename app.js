@@ -9,6 +9,14 @@ let router = new Router()
 const main = serve(path.join(__dirname, './dist'))
 app.use(main)
 
+router.get('/api/getUser', (ctx, next) => {
+  ctx.type = 'json'
+  ctx.body = {
+    name: '白宇',
+    role: '赵云澜'
+  }
+})
+
 router.get('*', (ctx, next) => {
   ctx.type = 'html'
   ctx.body = fs.createReadStream(path.join(__dirname, './dist', 'index.html'))

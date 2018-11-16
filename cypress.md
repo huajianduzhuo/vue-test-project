@@ -40,3 +40,10 @@ describe('Hooks', function() {
 ## test structure
 
 `context()` 与 `describe()` 相等，`specify()` 与 `it()` 相等。
+
+## stubbing
+
+1 `cy.server()`
+2 `cy.route()`
+
+https://posuat1.mercedes-benz-finance.com.cn/cicd-mobile/e-app/#
