@@ -10,8 +10,10 @@
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js",
-    "e2e:open": "cypress open",
-    "e2e:run": "cypress run"
+    "e2e-gui": "cypress open",
+    "e2e": "cypress run",
+    "e2e-gui:env": "cypress open --env",
+    "e2e:env": "cypress run --env",
   },
   "dependencies": {
     "animate.css": "^3.5.2",

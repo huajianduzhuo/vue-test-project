@@ -1,0 +1,9 @@
+{
+  "mobile": "",
+  "bankCard": "",
+  "imgValidCode": "1234",
+  "valideCode": "123456",
+  "facialPath": "video/yujing.mp4",
+  "ocrFrontPath": "images/yujing_front.jpg",
+  "ocrBackPath": "images/yujing_back.jpg"
+}

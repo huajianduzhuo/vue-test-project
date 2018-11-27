@@ -1,0 +1,45 @@
+{
+  "code": "200",
+  "msg": "Get digital application form list success.",
+  "msgcn": "获取digital application form列表成功。",
+  "data": [{
+    "Guid": "c22fa790f10d42b1a6eb4ce23e733dce",
+    "CompanyID": 1,
+    "AssetModelName": "E 200 L Sedan",
+    "CarNameCN": "E 200 L 轿车",
+    "FinancialProductID": 2105,
+    "FinancialProductName": "IC_PRD_PC_201805_Retail",
+    "ApplicationCreationDate": "2018-11-13T14:17:13",
+    "Status": 2,
+    "DealerID": 717379,
+    "DealerName": "自贡仁孚汽车服务有限公司",
+    "ApplicationStatus": 15,
+    "CustomerType": 1
+  }, {
+    "Guid": "80d5f220ff714b29b44ca27a269aa039",
+    "CompanyID": 1,
+    "AssetModelName": "E 200 L Sport Sedan",
+    "CarNameCN": "E 200 L 运动轿车",
+    "FinancialProductID": 2135,
+    "FinancialProductName": "IC CPN BP_2018 Q3_Star Approval",
+    "ApplicationCreationDate": "2018-09-26T11:58:15",
+    "Status": 3,
+    "DealerID": 717379,
+    "DealerName": "自贡仁孚汽车服务有限公司",
+    "ApplicationStatus": 25,
+    "CustomerType": 1
+  }, {
+    "Guid": "31e051bb0ef24ded9cd992e62b9d1302",
+    "CompanyID": 1,
+    "AssetModelName": "E 200 L Sport Sedan",
+    "CarNameCN": "E 200 L 运动轿车",
+    "FinancialProductID": 2135,
+    "FinancialProductName": "IC CPN BP_2018 Q3_Star Approval",
+    "ApplicationCreationDate": "2018-09-26T10:08:26",
+    "Status": 3,
+    "DealerID": 717379,
+    "DealerName": "自贡仁孚汽车服务有限公司",
+    "ApplicationStatus": 25,
+    "CustomerType": 1
+  }]
+}

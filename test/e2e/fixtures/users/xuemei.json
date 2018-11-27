@@ -1,0 +1,9 @@
+{
+  "mobile": "",
+  "bankCard": "",
+  "imgValidCode": "1234",
+  "valideCode": "123456",
+  "facialPath": "video/xiemei.mp4",
+  "ocrFrontPath": "images/xuemei_front.jpg",
+  "ocrBackPath": "images/xuemei_back.jpg"
+}

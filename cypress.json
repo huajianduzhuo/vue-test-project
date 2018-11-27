@@ -8,6 +8,11 @@
   "videosFolder": "test/e2e/videos",
   "viewportWidth": 375,
   "viewportHeight": 667,
-  "pageLoadTimeout": 120000,
-  "requestTimeout": 60000
+  "pageLoadTimeout": 180000,
+  "requestTimeout": 60000,
+  "responseTimeout": 120000,
+  "env": {
+    "dafPrefix": "/cicd-mobile/e-app",
+    "ekycPrefix": "/ekyc"
+  }
 }
