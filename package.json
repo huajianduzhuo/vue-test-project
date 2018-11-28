@@ -13,7 +13,7 @@
     "e2e-gui": "cypress open",
     "e2e": "cypress run",
     "e2e-gui:env": "cypress open --env",
-    "e2e:env": "cypress run --env",
+    "e2e:env": "cypress run --env"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
@@ -21,6 +21,7 @@
     "better-scroll": "^1.8.0",
     "copy-to-clipboard": "^3.0.8",
     "element-ui": "^2.4.9",
+    "http-proxy-middleware": "^0.19.1",
     "koa": "^2.5.1",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
