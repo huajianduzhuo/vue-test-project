@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div>
-      <div class="item" v-for="(item, index) in list" @click="handleClick" v-longtap="{handler: longtapCB, time: 1000, disX: 10}" :key="index">{{item}}</div>
+      <div class="item" v-for="(item, index) in list" @click="handleClick" v-longtap:[index]="{handler: longtapCB, time: 1000, disX: 10}" :key="index">{{item}}</div>
     </div>
   </div>
 </template>
@@ -14,12 +14,12 @@ export default {
     }
   },
   methods: {
-    longtapCB (event, el, vNode) {
+    longtapCB (event, index, vNode) {
       console.log(vNode)
       console.log('--------')
-      this.$menu(event, el, {
+      this.$menu(event, vNode.elm, {
         menuDirection: 'horizontal',
-        data: {index: vNode.key, name: el.textContent},
+        data: {index: vNode.key, name: this.list[index]},
         items: {copy: true},
         customItems: [{
           menuName: '详情',
