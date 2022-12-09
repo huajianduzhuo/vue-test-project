@@ -28,7 +28,7 @@
     "lodash.debounce": "^4.0.8",
     "mint-ui": "^2.2.13",
     "path": "^0.12.7",
-    "qs": "^6.5.1",
+    "qs": "^6.5.3",
     "register-service-worker": "^1.4.1",
     "swiper": "^4.0.7",
     "vue": "^2.5.2",
